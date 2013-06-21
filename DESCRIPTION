@@ -1,0 +1,15 @@
+Package: shinyExtras
+Type: Package
+Title: Helper Functions for Shiny
+Version: 0.1.0
+Date: 2013-06-21
+Author: Kevin Ushey
+Maintainer: Kevin Ushey <kevinushey@gmail.com>
+Description: Functions to make the Shiny development experience a bit easier.
+License: GPL (>= 2)
+Imports:
+    shiny
+Collate:
+    'functions.R'
+    'html.R'
+    'shinyExtras.R'

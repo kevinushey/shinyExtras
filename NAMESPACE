@@ -1,0 +1,7 @@
+export(css)
+export(html)
+export(js)
+export(makeHTMLTag)
+importFrom(shiny,singleton)
+importFrom(shiny,tags)
+S3method(print,kHTML)
