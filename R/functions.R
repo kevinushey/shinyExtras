@@ -6,8 +6,8 @@
 #' @param file Location of the file.
 #' @importFrom shiny singleton tags
 #' @export
-js <- function(file) {
-  if( !file.exists(file) ) {
+shiny_js <- function(file) {
+  if( !file.exists(file.path("www", file)) ) {
     warning("No JavaScript file located at '", file, "'.")
   }
   return( singleton( tags$head( tags$script(
@@ -24,11 +24,24 @@ js <- function(file) {
 #' @param file Location of the file.
 #' @importFrom shiny singleton tags
 #' @export
-css <- function(file) {
-  if( !file.exists(file) ) {
+shiny_css <- function(file) {
+  if( !file.exists(file.path("www", file)) ) {
     warning("No CSS stylesheet located at '", file, "'.")
   }
   return( singleton( tags$head( tags$link(
     rel="stylesheet", type="text/css", href=file
+  ))))
+}
+
+#' Include D3.js
+#' 
+#' This function produces a singleton for including d3.js as:
+#' \code{<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>}.
+#' 
+#' @importFrom shiny singleton tags
+#' @export
+use_d3 <- function() {
+  return( singleton( tags$head( tags$script(
+    type="text/javascript", charset="utf-8", src="http://d3js.org/d3.v3.min.js"
   ))))
 }
